@@ -25,7 +25,8 @@
     />
 
     <script>
-      $("#render").addEventListener("load", function() {
+      const modelViewer = document.querySelector("#render");
+      modelViewer.addEventListener("load", function() {
         console.log("Model loaded!");
         e.target.style.zIndex = "0"
       })
