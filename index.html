@@ -11,10 +11,10 @@
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <script>
-      $("#render").on("load", function() {
+      function handleLoad() {
         console.log("Model loaded")
         $("#message").css({"z-index": "0"})
-      })
+      }
     </script>
   </head>
 
@@ -29,6 +29,7 @@
         auto-rotate
         camera-controls
         background-color="#455A64"
+        load="handleLoad()"
       />
     </div>
   </body>
