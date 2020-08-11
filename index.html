@@ -6,13 +6,23 @@
 
     <!-- Loads model-viewer for modern browsers -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+    <script>
+      $("#render").load(function() {
+        $("#holder").show();
+        $("#message").hide();
+      })
+    </script>
   </head>
 
-  <body>
+  <body style="height: 100%;">
+    <div id="message" style="top: 50%;left: 50%;transform: translate(-50%,-50%);">Loading...</div>
     <div id="holder">
       <model-viewer
+        id="render"
         style="width: 100%;height: 800px;"
         src="./render.glb"
         alt="A 3D model of a robot"
