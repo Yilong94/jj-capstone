@@ -11,26 +11,23 @@
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <script>
-      function handleLoad() {
-        console.log("Model loaded")
-        $("#message").css({"z-index": "0"})
-      }
+      $("#render").addEventListener("load", function() {
+        console.log("Model loaded!");
+        e.target.style.zIndex = "0"
+      })
     </script>
   </head>
 
   <body style="height: 100%;">
-    <div id="message" style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 10;">Loading...</div>
-    <div id="holder">
-      <model-viewer
-        id="render"
-        style="width: 100%;height: 800px;"
-        src="./render.glb"
-        alt="A 3D model of a robot"
-        auto-rotate
-        camera-controls
-        background-color="#455A64"
-        load="handleLoad()"
-      />
-    </div>
+    <div id="message" style="position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);z-index: 10;">Loading...</div></div>
+    <model-viewer
+      id="render"
+      style="width: 100%;height: 800px;"
+      src="./render.glb"
+      alt="A 3D model of a robot"
+      auto-rotate
+      camera-controls
+      background-color="#455A64"
+    />
   </body>
 </html>
