@@ -12,15 +12,18 @@
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
     <script>
       $("#render").on("load", function() {
-        $("#holder").removeAttr("hidden");
-        $("#message").attr("hidden", true);
+        console.log("Model loaded")
+        // $("#holder").removeAttr("hidden");
+        // $("#message").attr("hidden", true);
+        $("#holder").css({"display": "block"})
+        $("#message").css({"display": "none"})
       })
     </script>
   </head>
 
   <body style="height: 100%;">
     <div id="message" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);">Loading...</div>
-    <div hidden id="holder">
+    <div style="display: none;" id="holder">
       <model-viewer
         id="render"
         style="width: 100%;height: 800px;"
