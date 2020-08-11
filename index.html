@@ -10,12 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Loads model-viewer for older browsers -->
     <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-    <script>
-      $("#render").addEventListener("load", function() {
-        console.log("Model loaded!");
-        e.target.style.zIndex = "0"
-      })
-    </script>
   </head>
 
   <body style="height: 100%;">
@@ -29,5 +23,12 @@
       camera-controls
       background-color="#455A64"
     />
+
+    <script>
+      $("#render").addEventListener("load", function() {
+        console.log("Model loaded!");
+        e.target.style.zIndex = "0"
+      })
+    </script>
   </body>
 </html>
